@@ -21,6 +21,20 @@ class UserSeeder extends Seeder
             'password' => bcrypt('adminadmin'),
             'auth_id' => '1',
             ]);
+
+        User::create([
+            'name' => 'user_lv_low',
+            'email' => 'user1@user.test',
+            'password' => bcrypt('testtest'),
+            'auth_id' => '2',
+            ]);
+
+        User::create([
+            'name' => 'user_lv_middle',
+            'email' => 'user2@user.test',
+            'password' => bcrypt('testtest'),
+            'auth_id' => '3',
+            ]);
         //
     }
 }
