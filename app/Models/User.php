@@ -44,6 +44,6 @@ class User extends Authenticatable
 
     public function authority()
     {
-        return $this->belongsTo(Authority::class);
+        return $this->belongsTo(Authority::class, 'auth_id');
     }
 }
