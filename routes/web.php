@@ -18,7 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', [UsersController::class, 'index']);
+Route::resource('user', 'App\Http\Controllers\UsersController')->only([
+    'index', 'edit', 'update'
+]);
+
+Route::resource('authority', 'App\Http\Controllers\AuthoritiesController')->only([
+    'create', 'store'
+]);
 
 Auth::routes();
 

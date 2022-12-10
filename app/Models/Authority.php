@@ -14,4 +14,6 @@ class Authority extends Model
     {
         return $this->hasMany(User::class, 'auth_id');
     }
+
+    protected $fillable = ['name'];
 }
