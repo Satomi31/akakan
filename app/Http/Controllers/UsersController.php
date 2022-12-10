@@ -12,17 +12,18 @@ class UsersController extends Controller
   public function index(){
     $user_auth_id = \Auth::user() -> auth_id;
     $users = User::all();
-    // $authorities = Authority::all();
-    // $users = User::with('authorities')->get();
     return view('index', ['users' => $users, 'user_auth_id' => $user_auth_id]);
   }
 
-  public function edit(){
-
+  public function edit($id){
+    $user = User::find($id);
+    return view('edit', ['user' => $user]);
   }
 
-  public function update(){
-
+  public function update(Request $request, $id){
+    $user = User::find($id);
+    $user->fill($request->all())->save();
+    return redirect()->route('user.index');
   }
     //
 }

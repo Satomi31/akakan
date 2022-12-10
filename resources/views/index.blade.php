@@ -15,7 +15,7 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->authority->auth_level }}</td>
-                        <td>編集</td>
+                        <td><a href="{{ route('user.edit', ['user'=>$user->id]) }}">編集</a></td>
                     </tr>
                 @endforeach
             @elseif($user_auth_id == 3 )
