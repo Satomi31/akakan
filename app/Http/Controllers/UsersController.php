@@ -23,7 +23,7 @@ class UsersController extends Controller
   public function update(Request $request, $id){
     $user = User::find($id);
     $user->fill($request->all())->save();
-    return redirect()->route('user.index');
+    return redirect()->route('users.index');
   }
     //
 }

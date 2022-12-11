@@ -18,7 +18,7 @@ class AuthoritiesController extends Controller
         $auth = new Authority();
         $auth->auth_level = $request->auth_level;
         $auth->save();
-        return redirect()->route('user.index');
+        return redirect()->route('authority.create');
     }
     //
 }
