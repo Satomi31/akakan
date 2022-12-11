@@ -9,7 +9,8 @@ class AuthoritiesController extends Controller
 {
   public function create(Request $request)
     {
-        return view('create');
+        $auths = Authority::all();
+        return view('create', ['auths' => $auths]);
     }
 
   public function store(Request $request)

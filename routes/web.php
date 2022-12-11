@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::resource('user', 'App\Http\Controllers\UsersController')->only([
+Route::resource('users', 'App\Http\Controllers\UsersController')->only([
     'index', 'edit', 'update'
 ]);
 

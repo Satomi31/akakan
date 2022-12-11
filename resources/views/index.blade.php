@@ -4,7 +4,7 @@
     <div class="container">
         <h4>アカウント一覧</h4>
         @if($user_auth_id == 1 )
-            <div class="text-right"><a href="{{ route('authority.create') }}">権限レベル追加</a></div>
+            <div class="text-right mb-3"><a href="{{ route('authority.create') }}">権限レベル追加</a></div>
         @endif
         <table class="table">
             @if($user_auth_id == 1 )
@@ -15,7 +15,7 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->authority->auth_level }}</td>
-                        <td><a href="{{ route('user.edit', ['user'=>$user->id]) }}">編集</a></td>
+                        <td><a href="{{ route('users.edit', ['user'=>$user->id]) }}">編集</a></td>
                     </tr>
                 @endforeach
             @elseif($user_auth_id == 3 )
